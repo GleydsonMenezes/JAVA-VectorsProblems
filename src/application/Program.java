@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import entities.Person;
 import entities.Product;
+import entities.Rent;
 
 public class Program {
 
@@ -25,6 +26,7 @@ public class Program {
 				+ "7 - Sum of Vectors \n"
 				+ "8 - Under Average\n"
 				+ "9 - Average between Even numbers\n"
+				+ "10 - boarding house Challenge\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -261,6 +263,35 @@ public class Program {
 			}else {
 				System.out.println("No Even Numbers");
 			}
+			
+			break;
+			
+		case 10:
+			
+			
+			System.out.println("How many rooms will be rented?");
+			n = sc.nextInt();
+			sc.nextLine();
+			Rent[] Rent = new Rent[10];
+			for (int i = 1; i <= n; i++) {
+				System.out.println("Rent #" + i+ ": ");
+				System.out.print("name: ");
+				String name = sc.nextLine();
+				System.out.print("Email: ");
+				String email = sc.nextLine();
+				System.out.print("Number of room: ");
+				int roomNumber = sc.nextInt();
+				sc.nextLine();
+				Rent[roomNumber] = new Rent(name, email);
+			}
+			
+			for (int i = 0; i < Rent.length; i++) {
+				if (Rent[i] != null) {
+					System.out.println("Busy rooms: ");
+					System.out.println((i)+ ": "+ Rent[i]);
+				}
+			}
+			
 			
 			break;
 			
