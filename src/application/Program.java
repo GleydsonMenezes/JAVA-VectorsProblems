@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -22,6 +23,7 @@ public class Program {
 				+ "5 - Pair Numbers Vectors\n"
 				+ "6 - Higher Value position Vectors\n"
 				+ "7 - Sum of Vectors \n"
+				+ "8 - Under Average\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -205,6 +207,30 @@ public class Program {
 			}
 			
 			break;
+		
+		case 8:
+			
+			double avgVector = 0.0;
+			double underAvg = 0.0;
+			System.out.println("How many values will each vector have? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			double[] vect4 = new double[n];
+			
+			
+			for (int i = 0; i < vect4.length; i++) {
+				System.out.println("Enter a number: ");
+				vect4[i] = sc.nextDouble();	
+				avgVector += vect4[i];
+			}
+			
+			avgVector = avgVector / vect4.length;
+			System.out.printf("Average Vector: %.3f%n", avgVector);
+			for (int i = 0; i < vect4.length; i++) {
+				if (vect4[i] < avgVector) {
+					System.out.println(vect4[i]);
+				}
+			}
 			
 		}
 		sc.close();
