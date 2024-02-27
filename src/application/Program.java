@@ -3,6 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Person;
 import entities.Product;
 
 public class Program {
@@ -16,6 +17,8 @@ public class Program {
 		System.out.println("Enter the number of exercícies do you'll see: \n"
 				+ "1 - Products Vectors\n"
 				+ "2 - Negative numbers Vectors\n"
+				+ "3 - Average values Vectors\n"
+				+ "4 - Height values Vectors\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -60,6 +63,63 @@ public class Program {
 			for (int i = 0; i < vect.length; i++) {
 				if (vect[i] < 0) {
 					System.out.println(vect[i]);
+				}
+			}
+			break;
+		case 3:
+			System.out.println("How many numbers will you enter? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			int[] vect1 = new int[n];
+			
+			for (int i = 0; i < vect1.length; i++) {
+				System.out.println("Enter a number: ");
+				vect1[i] = sc.nextInt();				
+			}
+			
+			int sum1 = 0;
+			System.out.print("VALUES: ");
+			for (int i = 0; i < vect1.length; i++) {
+				System.out.print(" " + vect1[i]);
+				sum1 += vect1[i];
+			}
+			System.out.print("\nSUM: "+ sum1);
+			System.out.print("\nAVERAGE: "+ sum1 / vect1.length);
+
+			break;
+			
+		case 4:
+			
+			System.out.println("How many people will you enter? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			Person[] person = new Person[n];
+			
+			double avgHeight = 0.0;
+			double percentMinor = 0.0;
+			for (int i = 0; i < person.length; i++) {
+				System.out.print("Data of #"+ (i + 1) +" person: \n");
+				System.out.print("Name: ");
+				String name = sc.nextLine();
+				System.out.print("Age: ");
+				int age = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Height: ");
+				double height = sc.nextDouble();	
+				sc.nextLine();
+				person[i] = new Person(name, age, height);
+				avgHeight += person[i].getHeight();
+				if (person[i].getAge() < 16) {
+					percentMinor++;
+				}
+			}
+			
+			System.out.printf("AVERAGE HEGHT: %.2f\n", (double)(avgHeight / person.length));
+			percentMinor = ((double)percentMinor / person.length) * 100.0;
+			System.out.printf("People under 16: %.1f%\n", percentMinor);
+			for (int i = 0; i < person.length; i++) {
+				if (person[i].getAge() < 16) {
+					System.out.println(person[i].getName());
 				}
 			}
 			
