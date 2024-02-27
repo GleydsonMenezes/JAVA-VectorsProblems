@@ -21,6 +21,7 @@ public class Program {
 				+ "4 - Height values Vectors\n"
 				+ "5 - Pair Numbers Vectors\n"
 				+ "6 - Higher Value position Vectors\n"
+				+ "7 - Sum of Vectors \n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -174,7 +175,34 @@ public class Program {
 			System.out.println("HIGHER VALUE: " + highValue);
 			System.out.println("POSITION OF THE HIGHER VALUE: "+ highPosition);
 			
+			break;
 			
+		case 7:
+			
+			System.out.println("How many values will each vector have? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			int[] vectA = new int[n];
+			int[] vectB = new int[n];
+			int[] vectResult = new int[n];
+			
+			for (int i = 0; i < vectA.length; i++) {
+				System.out.println("Enter the values of vector A: ");
+				vectA[i] = sc.nextInt();	
+				vectResult[i] += vectA[i];
+				
+			}
+			
+			for (int i = 0; i < vectB.length; i++) {
+				System.out.println("Enter the values of vector B: ");
+				vectB[i] = sc.nextInt();
+				vectResult[i] += vectB[i];
+			}
+				
+			System.out.println("VECTOR RESULT: ");
+			for (int i = 0; i< vectResult.length; i++) {
+				System.out.println(vectResult[i]);
+			}
 			
 			break;
 			
