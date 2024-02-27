@@ -19,6 +19,7 @@ public class Program {
 				+ "2 - Negative numbers Vectors\n"
 				+ "3 - Average values Vectors\n"
 				+ "4 - Height values Vectors\n"
+				+ "5 - Pair Numbers Vectors\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -123,6 +124,31 @@ public class Program {
 				}
 			}
 			
+			
+			break;
+			
+		case 5:
+			
+			int pairnumbersQuantity = 0;
+			System.out.println("How many numbers will you enter? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			int[] vect2 = new int[n];
+			
+			for (int i = 0; i < vect2.length; i++) {
+				System.out.println("Enter a number: ");
+				vect2[i] = sc.nextInt();	
+			}
+			
+			System.out.println("PAIR NUMBERS: ");
+			for (int i = 0; i < vect2.length; i++) {
+				if (vect2[i] %2 == 0) {
+					System.out.println(" " + vect2[i]);
+					pairnumbersQuantity++;
+				}
+	
+			}
+			System.out.println("NUMBER OF PAIRS = "+ pairnumbersQuantity);
 			
 			break;
 			
