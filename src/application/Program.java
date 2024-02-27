@@ -20,10 +20,11 @@ public class Program {
 				+ "2 - Negative numbers Vectors\n"
 				+ "3 - Average values Vectors\n"
 				+ "4 - Height values Vectors\n"
-				+ "5 - Pair Numbers Vectors\n"
+				+ "5 - Even Numbers Vectors\n"
 				+ "6 - Higher Value position Vectors\n"
 				+ "7 - Sum of Vectors \n"
 				+ "8 - Under Average\n"
+				+ "9 - Average between Even numbers\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -133,7 +134,7 @@ public class Program {
 			
 		case 5:
 			
-			int pairnumbersQuantity = 0;
+			int evenNumbersQuantity = 0;
 			System.out.println("How many numbers will you enter? ");
 			n = sc.nextInt();
 			sc.nextLine();
@@ -144,15 +145,15 @@ public class Program {
 				vect2[i] = sc.nextInt();	
 			}
 			
-			System.out.println("PAIR NUMBERS: ");
+			System.out.println("EVEN NUMBERS: ");
 			for (int i = 0; i < vect2.length; i++) {
 				if (vect2[i] %2 == 0) {
 					System.out.println(" " + vect2[i]);
-					pairnumbersQuantity++;
+					evenNumbersQuantity++;
 				}
 	
 			}
-			System.out.println("NUMBER OF PAIRS = "+ pairnumbersQuantity);
+			System.out.println("NUMBER OF EVEN = "+ evenNumbersQuantity);
 			
 			break;
 			
@@ -231,6 +232,37 @@ public class Program {
 					System.out.println(vect4[i]);
 				}
 			}
+		case 9:
+			
+			
+			System.out.println("How many values will each vector have? ");
+			int EvenNumbersCount = 0;
+			int EvenNumbersavg = 0;
+			n = sc.nextInt();
+			sc.nextLine();
+			int[] vect5 = new int[n];
+			
+			
+			for (int i = 0; i < vect5.length; i++) {
+				System.out.println("Enter a number: ");
+				vect5[i] = sc.nextInt();
+				sc.nextLine();
+			}
+			
+			for (int i = 0; i < vect5.length; i++) {
+				if (vect5[i] % 2 == 0) {
+					EvenNumbersavg += vect5[i];
+					EvenNumbersCount++;
+				} 
+			}
+			
+			if (EvenNumbersCount > 0) {
+				System.out.printf("AVERAGE OF EVEN NUMBERS: %.1f", (double)(EvenNumbersavg/EvenNumbersCount));
+			}else {
+				System.out.println("No Even Numbers");
+			}
+			
+			break;
 			
 		}
 		sc.close();
