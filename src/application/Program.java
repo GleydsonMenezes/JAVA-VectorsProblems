@@ -20,6 +20,7 @@ public class Program {
 				+ "3 - Average values Vectors\n"
 				+ "4 - Height values Vectors\n"
 				+ "5 - Pair Numbers Vectors\n"
+				+ "6 - Higher Value position Vectors\n"
 				+ "0 - Exit");
 		int number = sc.nextInt();
 		sc.nextLine();
@@ -149,6 +150,31 @@ public class Program {
 	
 			}
 			System.out.println("NUMBER OF PAIRS = "+ pairnumbersQuantity);
+			
+			break;
+			
+		case 6:
+			
+			int highValue = 0;
+			int highPosition = 0;
+			System.out.println("How many numbers will you enter? ");
+			n = sc.nextInt();
+			sc.nextLine();
+			int[] vect3 = new int[n];
+			
+			for (int i = 0; i < vect3.length; i++) {
+				System.out.println("Enter a number: ");
+				vect3[i] = sc.nextInt();	
+				if (vect3[i] > highValue) {
+					highValue = vect3[i];
+					highPosition = i;
+				}			
+			}
+			
+			System.out.println("HIGHER VALUE: " + highValue);
+			System.out.println("POSITION OF THE HIGHER VALUE: "+ highPosition);
+			
+			
 			
 			break;
 			
